@@ -1,6 +1,6 @@
-package beecrowd.iniciante.cedulas.domain;
+package beecrowd.iniciante.cedulasmoedas.domain;
 
-public class Cedulas{
+public class CedulasMoedas{
 	private int value;
 
 	public void init(int value){
