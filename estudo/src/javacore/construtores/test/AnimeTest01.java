@@ -1,11 +1,9 @@
-package javacore.construrores.test;
+package javacore.construtores.test;
 import javacore.construtores.domain.Anime;
 
 public class AnimeTest01{
 	public static void main(String[] args){
-		Anime anime = new Anime();
-		anime.init("Naruto","TV",12);
-		anime.init("Naruto","TV",12,"Luta");
+		Anime anime = new Anime("Naruto","TV",12);
 		anime.imprime();
 	}
 }
