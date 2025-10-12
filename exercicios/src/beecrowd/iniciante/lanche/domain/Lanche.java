@@ -1,31 +1,55 @@
 package beecrowd.iniciante.lanche.domain;
+import java.util.Scanner;
 
 public class Lanche{
 	private double totalPagar;
+	Menu menu = new Menu();
+	Scanner scanner = new Scanner(System.in);	
 
-	public void menu(){
-		System.out.println("------------------------------------------")
-		System.out.println("| CÓDIGO \t|  ESPECIFICAÇÃO  |\t| PREÇO  |")
-		System.out.println("------------------------------------------")
-		System.out.println("|  [1]   \t|  Cachorro Quente|\t| R$4.00 |")
-		System.out.println("------------------------------------------")
-		System.out.println("|  [2]   \t|  X-Salada       |\t| R$4.50 |")
-		System.out.println("------------------------------------------")
-		System.out.println("|  [3]   \t|  X-Bacon        |\t| R$5.00 |")
-		System.out.println("------------------------------------------")
-		System.out.println("|  [4]   \t|  Torrada Simples|\t| R$2.00 |")
-		System.out.println("------------------------------------------")
-		System.out.println("|  [5]   \t|  Refrigerante  |\t|  R$1.50 |")
-		System.out.println("------------------------------------------")
-		System.out.println("|  [0]   \t|  Finalizar Pedido           |")
-		System.out.println("------------------------------------------")
+	public void mostrarTotalPagar(){
+		double valor = calculaValorDoPedido();
+		System.out.println("Total: R$ " + valor);
 	}
 
-	public void setTotalPagar(){
-		this.totalPagar = totalPagar;
+	public double calculaValorDoPedido(){
+		menu.menu();
+		System.out.print("Faça seu pedido: ");
+		int numPedido = scanner.nextInt();
+		while(numPedido != 0){
+			switch(numPedido){
+				case 1: 
+					totalPagar += 4.00;
+					break;
+				case 2: 
+                                        totalPagar += 4.50;
+                                        break;
+				case 3: 
+                                        totalPagar += 5.00;
+                                        break;
+				case 4:
+                                        totalPagar += 2.00;
+                                        break;
+				case 5:
+                                        totalPagar += 1.50;
+                                        break;
+				case 9:
+					menu.menu();
+					break;
+				default: 
+					System.out.print("Não existe essa opção");
+					break;
+			}
+			if(numPedido != 0 ){
+				System.out.print("Adicionar algo main? ");
+				numPedido = scanner.nextInt();
+			}
+			
+		}
+		return totalPagar;
 	}
-
+		
 	public double getTotalPagar(){
 		return totalPagar;
 	}
+
 }
