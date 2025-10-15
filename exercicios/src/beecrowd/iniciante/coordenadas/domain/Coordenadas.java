@@ -4,7 +4,7 @@ public class Coordenadas{
 	private double x;
 	private double y;
 
-	public void mostrarLocalPonto((double x, double y){
+	public void mostrarLocalPonto(double x, double y){
 		String ponto = verificaCoordenadas(x,y);
 		System.out.println(ponto);
 	}
