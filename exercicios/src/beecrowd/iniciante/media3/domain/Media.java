@@ -1,6 +1,8 @@
 package beecrowd.iniciante.media3.domain;
+import java.util.Scanner;
 
 public class Media{
+	public Scanner scanner = new Scanner(System.in);
 	private double nota1;
 	private double nota2;
 	private double nota3;
@@ -14,17 +16,26 @@ public class Media{
 
 	public String verificaMedia(double media){
 		if(media >= 7.0){
-			return "Aluno Aprovado";
+			return "Aluno Aprovado.";
 		}else if(media >= 5.0 &&  media < 7.0 ){
-			return "Aluno em Exame";
+			return "Aluno em Exame.";
 		}else{
-			return "Aluno Reprovado";
+			return "Aluno Reprovado.";
 		}
 	}
 
-	public void verificaSeFicouDeExame(String alunoStatus){
-		if(alunoStatus == "Aluno em Exame"){
+	public void verificaSeFicouDeExame(String alunoStatus, double media){
+		if(alunoStatus == "Aluno em Exame."){
 			
+			System.out.print("Nota Exame: ");
+			double notaExameFinal = scanner.nextDouble();
+			
+			double mediaFinal = calculaMediaFinal(media, notaExameFinal);
+			System.out.println("Média Final: " + mediaFinal);
+			
+			String alunoStatusFinal = verificaMediafinal(mediaFinal);
+			
+			System.out.println(alunoStatusFinal);
 		}
 	}
 
@@ -34,17 +45,18 @@ public class Media{
 
 	public String verificaMediafinal(double mediaFinal){
 		if(mediaFinal >= 7.0){
-			return "Aluno Aprovado";
+			return "Aluno Aprovado.";
 		}else{
-			return "Aluno Reprovado";
+			return "Aluno Reprovado.";
 		}
 	}
 
 	public void mostrar(double nota1, double nota2, double nota3, double nota4){
 		double media = calculaMedia(nota1, nota2, nota3, nota4);
-		System.out.prinln("Media:" + media);
+		System.out.println("Media:" + media);
 		String alunoStatus = verificaMedia(media);
-		System.out.prinln(alunoStatus);
+		System.out.println(alunoStatus);
+		verificaSeFicouDeExame(alunoStatus,media);
 		
 	}
 

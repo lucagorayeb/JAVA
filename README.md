@@ -1,3 +1,3 @@
 # JAVA FOR LIFE
-# My favorite IDE is vim! 
+# My favorites IDE's are VIM and SublimeText! 
 # I love Linux
