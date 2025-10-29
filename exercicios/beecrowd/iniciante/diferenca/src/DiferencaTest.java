@@ -1,5 +1,4 @@
-package beecrowd.iniciante.diferenca.test;
-import beecrowd.iniciante.diferenca.domain.Diferenca;
+import lib.Diferenca;
 
 public class DiferencaTest{
 	public static void main(String[] args){

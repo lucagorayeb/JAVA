@@ -1,4 +1,4 @@
-package beecrowd.iniciante.diferenca.domain;
+package lib;
 
 public class Diferenca{
 	private int numero1;
