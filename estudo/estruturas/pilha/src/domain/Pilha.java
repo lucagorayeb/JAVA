@@ -1,4 +1,3 @@
-package estruturas.pilha;
 
 public class Pilha{
     public int maxSize = 100;

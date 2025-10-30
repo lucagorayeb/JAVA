@@ -1,4 +1,4 @@
-package beecrowd.iniciante.multiplos.domain;
+package domain;
 
 public class Multiplos{
     private int num1;
